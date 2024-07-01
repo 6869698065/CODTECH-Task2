@@ -1,0 +1,51 @@
+module uart_tx (
+    input wire clk,        // System clock
+    input wire reset,      // System reset
+    input wire tx_start,   // Start transmission
+    input wire [7:0] tx_data, // Data to be transmitted
+    output reg tx,         // UART transmit line
+    output reg tx_done     // Transmission complete
+);
+
+    parameter BAUD_RATE = 9600;
+    parameter CLK_FREQ = 50000000;
+    localparam BAUD_PERIOD = CLK_FREQ / BAUD_RATE;
+
+    reg [12:0] baud_counter = 0;
+    reg [3:0] bit_counter = 0;
+    reg [7:0] tx_shift_reg = 0;
+    reg tx_active = 0;
+
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            baud_counter <= 0;
+            bit_counter <= 0;
+            tx_shift_reg <= 0;
+            tx_active <= 0;
+            tx <= 1'b1;
+            tx_done <= 0;
+        end else if (tx_start && !tx_active) begin
+            tx_shift_reg <= tx_data;
+            tx_active <= 1;
+            bit_counter <= 0;
+            baud_counter <= 0;
+            tx_done <= 0;
+        end else if (tx_active) begin
+            if (baud_counter < BAUD_PERIOD - 1) begin
+                baud_counter <= baud_counter + 1;
+            end else begin
+                baud_counter <= 0;
+                case (bit_counter)
+                    4'b0000: tx <= 1'b0; // Start bit
+                    4'b1001: begin
+                        tx <= 1'b1; // Stop bit
+                        tx_active <= 0;
+                        tx_done <= 1;
+                    end
+                    default: tx <= tx_shift_reg[bit_counter - 1];
+                endcase
+                bit_counter <= bit_counter + 1;
+            end
+        end
+    end
+endmodule
