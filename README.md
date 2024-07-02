@@ -22,17 +22,20 @@ UART (Universal Asynchronous Receiver/Transmitter) is a hardware communication p
 
 **#Basic Operation of UART**                                                                                                                                            
 
-**1.Asynchronous Communication**:
+**1.Asynchronous Communication**
+
 UART operates asynchronously, meaning there is no shared clock signal between the transmitting and receiving devices. Instead, both devices must agree on a common baud rate (the rate at which data is transmitted or received).                                                                                                      
 
-**2.Data Framing**:
+**2.Data Framing**
+
 UART frames data for transmission in a specific format, which typically includes:
 Start Bit: A single bit indicating the beginning of a data frame. It is usually 0.
 Data Bits: 5 to 9 bits representing the actual data. Commonly, 8 bits are used.
 Parity Bit (optional): A single bit used for error checking. It can be even or odd parity.
 Stop Bit(s): One or more bits indicating the end of a data frame. It is usually 1.                                                                                      
 
-**3.Baud Rate**:
+**3.Baud Rate**
+
 The baud rate defines the speed of communication in bits per second (bps). Both the transmitter and receiver must operate at the same baud rate for successful communication.
 
 **#Design Phase**                                                                                                                                                                
