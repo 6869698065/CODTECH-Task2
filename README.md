@@ -16,4 +16,4 @@ The objective of this project is to design, implement, and verify a UART (Univer
 -**Verilog**: The Primary Programming Language for Digital Logic Design.                                                                                            
 -**ModelSim**: For simulation and analysis of Verilog designs. 
 
-### Key Insight   
+### Key Insight                                                                                                                                                                                                                     
