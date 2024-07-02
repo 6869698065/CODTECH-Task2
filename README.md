@@ -17,3 +17,16 @@ The objective of this project is to design, implement, and verify a UART (Univer
 -**ModelSim**: For simulation and analysis of Verilog designs. 
 
 ### Key Insight                                                                                                                                                                                                                     
+**Design Phase**                                                                                                                                                                
+**1.UART Transmitter Design**
+
+-Inputs:
+**clk**: System clock
+**reset**: System reset
+**tx_start**: Start transmission signal
+**tx_data**: Data to be transmitted (8 bits)
+-Outputs:
+**tx**: UART transmit line
+**tx_done**: Transmission complete signal
+-Functionality:
+On **tx_start**, send a start bit (0), followed by 8 data bits **tx_data**, and stop bit (1).
