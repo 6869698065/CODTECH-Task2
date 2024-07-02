@@ -21,9 +21,7 @@ The objective of this project is to design, implement, and verify a UART (Univer
 **1.UART Transmitter Design**
 
 -Inputs:
-
-**clk**: System clock
-
+**clk**: System clock                                                                                                                                               
 **reset**: System reset
 **tx_start**: Start transmission signal
 **tx_data**: Data to be transmitted (8 bits)
