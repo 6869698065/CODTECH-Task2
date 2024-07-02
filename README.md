@@ -18,6 +18,7 @@ The objective of this project is to design, implement, and verify a UART (Univer
 
 ### Key Insight                                                                                                                                                                                                                     
 **Design Phase**                                                                                                                                                                
+
 **1.UART Transmitter Design**
 
 -Inputs                                                                                                                                                             
@@ -30,14 +31,15 @@ The objective of this project is to design, implement, and verify a UART (Univer
 **tx_done**: Transmission complete signal                                                                                                                                          
 -Functionality                                                                                                                                                      
 On **tx_start**, send a start bit (0), followed by 8 data bits **tx_data**, and stop bit (1).                                                                                        
+
 **2.UART Receiver Design**
 
 -Inputs                                                                                                                                                             
 **clk**: System clock                                                                                                                                               
 **reset**: System reset                                                                                                                                             
 **rx**: UART receive line                                                                                                                                            
--Outputs
+-Outputs                                                                                                                                                            
 **rx_data**: Received data (8 bits)                                                                                                                                 
 **rx_done**: Reception complete signal                                                                                                                                                  
 -Functionality                                                                                                                                                      
-Detect start bit, sample 8 data bits, and check stop bit(s) to complete reception.
+Detect **start bit**, sample 8 data bits, and check **stop bit(s)** to complete reception.
