@@ -19,8 +19,8 @@ The objective of this project is to design, implement, and verify a UART (Univer
 ### Key Insight                                                                                                                                                                                                                     
 **Design Phase**                                                                                                                                                                
 **1.UART Transmitter Design**
-
 -Inputs:
+
 **clk**: System clock
 **reset**: System reset
 **tx_start**: Start transmission signal
