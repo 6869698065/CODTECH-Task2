@@ -22,42 +22,47 @@ UART (Universal Asynchronous Receiver/Transmitter) is a hardware communication p
 
 **#Basic Operation of UART**                                                                                                                                            
 
-**1.Asynchronous Communication**
+**1.Asynchronous Communication**:
 UART operates asynchronously, meaning there is no shared clock signal between the transmitting and receiving devices. Instead, both devices must agree on a common baud rate (the rate at which data is transmitted or received).                                                                                                      
 
-**2.Data Framing**
+**2.Data Framing**:
 UART frames data for transmission in a specific format, which typically includes:
 Start Bit: A single bit indicating the beginning of a data frame. It is usually 0.
 Data Bits: 5 to 9 bits representing the actual data. Commonly, 8 bits are used.
 Parity Bit (optional): A single bit used for error checking. It can be even or odd parity.
 Stop Bit(s): One or more bits indicating the end of a data frame. It is usually 1.                                                                                      
 
-**3.Baud Rate**
+**3.Baud Rate**:
 The baud rate defines the speed of communication in bits per second (bps). Both the transmitter and receiver must operate at the same baud rate for successful communication.
 
 **#Design Phase**                                                                                                                                                                
 
 **1.UART Transmitter Design**
 
--Inputs                                                                                                                                                             
+*Inputs                                                                                                                                                             
 **clk**: System clock                                                                                                                                               
 **reset**: System reset                                                                                                                                             
 **tx_start**: Start transmission signal                                                                                                                             
 **tx_data**: Data to be transmitted (8 bits)                                                                                                                            
--Outputs                                                                                                                                                            
+
+*Outputs                                                                                                                                                            
 **tx**: UART transmit line                                                                                                                                          
-**tx_done**: Transmission complete signal                                                                                                                                          
--Functionality                                                                                                                                                      
+**tx_done**: Transmission complete signal                                                                                                                               
+
+*Functionality                                                                                                                                                      
 On **tx_start**, send a start bit (0), followed by 8 data bits **tx_data**, and stop bit (1).                                                                                        
 
 **2.UART Receiver Design**
 
--Inputs                                                                                                                                                             
+
+*Inputs                                                                                                                                                             
 **clk**: System clock                                                                                                                                               
 **reset**: System reset                                                                                                                                             
 **rx**: UART receive line                                                                                                                                            
--Outputs                                                                                                                                                            
+
+*Outputs                                                                                                                                                            
 **rx_data**: Received data (8 bits)                                                                                                                                 
-**rx_done**: Reception complete signal                                                                                                                                                  
--Functionality                                                                                                                                                      
+**rx_done**: Reception complete signal                                                                                                                              
+
+*Functionality                                                                                                                                                      
 Detect **start bit**, sample 8 data bits, and check **stop bit(s)** to complete reception.
