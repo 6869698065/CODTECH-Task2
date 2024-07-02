@@ -28,7 +28,7 @@ UART operates asynchronously, meaning there is no shared clock signal between th
 
 **2.Data Framing**
 
-UART frames data for transmission in a specific format, which typically includes:
+UART frames data for transmission in a specific format, which typically includes:                                                                                   
 Start Bit: A single bit indicating the beginning of a data frame. It is usually 0.                                                                                  
 Data Bits: 5 to 9 bits representing the actual data. Commonly, 8 bits are used.                                                                                     
 Parity Bit (optional): A single bit used for error checking. It can be even or odd parity.                                                                          
@@ -68,4 +68,6 @@ On **tx_start**, send a start bit (0), followed by 8 data bits **tx_data**, and 
 **rx_done**: Reception complete signal                                                                                                                              
 
 *Functionality                                                                                                                                                      
-Detect **start bit**, sample 8 data bits, and check **stop bit(s)** to complete reception.
+Detect **start bit**, sample 8 data bits, and check **stop bit(s)** to complete reception.                                                                                            
+
+**
