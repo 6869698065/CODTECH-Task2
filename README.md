@@ -75,7 +75,7 @@ Detect **start bit**, sample 8 data bits, and check **stop bit(s)** to complete 
 By completing this project, you will:
 
 -Gain hands-on experience in designing UART modules using Verilog.                                                                                                                                                   
--Learn how to simulate and verify digital designs using VLSI tools.
--Develop skills in waveform analysis to ensure the correct operation of digital communication protocols.
--Understand the practical aspects of UART communication and its implementation in real-world scenarios.
+-Learn how to simulate and verify digital designs using VLSI tools.                                                                                                                                                  
+-Develop skills in waveform analysis to ensure the correct operation of digital communication protocols.                                                                                                             
+-Understand the practical aspects of UART communication and its implementation in real-world scenarios.                                                                                                              
 *This project provides a comprehensive understanding of digital design and VLSI methodologies, preparing you for advanced work in digital and communication systems.
