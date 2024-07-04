@@ -71,9 +71,10 @@ On **tx_start**, send a start bit (0), followed by 8 data bits **tx_data**, and 
 Detect **start bit**, sample 8 data bits, and check **stop bit(s)** to complete reception.                                                                                            
 
 **Summary**
+
 By completing this project, you will:
 
--Gain hands-on experience in designing UART modules using Verilog.
+-Gain hands-on experience in designing UART modules using Verilog.                                                                                                                                                   
 -Learn how to simulate and verify digital designs using VLSI tools.
 -Develop skills in waveform analysis to ensure the correct operation of digital communication protocols.
 -Understand the practical aspects of UART communication and its implementation in real-world scenarios.
